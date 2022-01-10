@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEMO</title>
+    <link rel="stylesheet" href="./scss/all.css" />
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="left column">
+          <div class="header">
+            <p>boundary supply /</p>
+            <p>
+              better than brand new second hand clothing / focus by sick apparel
+              everyday,
+            </p>
+            <p>home of (23-29)</p>
+          </div>
+          <div class="link">
+            <a href="#">all products</a>
+          </div>
+        </div>
+        <div class="right column">
+          <div class="images">
+            <div class="img-1 img"></div>
+            <div class="img-2 img"></div>
+            <div class="img-3 img"></div>
+            <div class="img-4 img"></div>
+          </div>
+          <div class="header">
+            <h1 class="ml12">{{title}}</h1>
+          </div>
+        </div>
+      </div>
+      <div class="container1">
+        <div class="left-col">
+          <div class="logo">YunChien</div>
+          <div class="year">EST {{nowYear()}}</div>
+          <div class="cover">
+            <div class="play"><ion-icon name="play"></ion-icon></div>
+          </div>
+          <div class="data">
+            <div class="album-name">
+              <p id="name">Lorem ipsum</p>
+            </div>
+            <div class="album-artist">
+              <p id="artist">Jay Park</p>
+            </div>
+          </div>
+          <div class="buy">
+            <p id="more">Buy Now</p>
+          </div>
+          <div class="block-cover"></div>
+          <div class="block-bottom"></div>
+        </div>
+        <div class="right-col">
+          <div class="upper">
+            <div class="about">
+              <h1>song info</h1>
+              <div class="album-name2">
+                <p>
+                  <ion-icon name="radio"></ion-icon>&nbsp;
+                  <span>Kinda like it</span>
+                </p>
+              </div>
+              <div class="album-artist2">
+                <p>
+                  <ion-icon name="person"></ion-icon>&nbsp;
+                  <span>Freak like me</span>
+                </p>
+              </div>
+              <div class="album-genre2">
+                <p>
+                  <ion-icon name="musical-notes"></ion-icon>&nbsp;
+                  <span>Alternative</span>
+                </p>
+              </div>
+              <div class="media">
+                <p>Share now :</p>
+                <ul>
+                  <li>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </li>
+                  <li>
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="upper-block"></div>
+          <div class="bottom">
+            <div class="next">
+              <ion-icon name="play"></ion-icon>
+            </div>
+            <div class="data2">
+              <div class="album-name3">
+                <p id="name">Think about it</p>
+              </div>
+              <div class="album-artist3">
+                <p id="artist">Eric Chou</p>
+              </div>
+            </div>
+            <div class="more">
+              <p id="more">More like this</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const app = {
+        //   資料
+        data() {
+          return {
+            title: "My portfolio",
+          };
+        },
+        methods: {
+          nowYear() {
+            let current = new Date();
+            let year = current.getFullYear();
+            return year;
+          },
+        },
+        mounted() {
+          TweenMax.from([".left", ".left-col"], 1, {
+            left: "-100%",
+            ease: Expo.easeInOut,
+            delay: 1.4,
+          });
+          TweenMax.from([".upper"], 1, {
+            left: "-200%",
+            ease: Expo.easeInOut,
+            delay: 2.4,
+          });
+          TweenMax.from([".bottom"], 1, {
+            left: "-200%",
+            ease: Expo.easeInOut,
+            delay: 3.4,
+          });
+
+          TweenMax.from(".header h1", 3, {
+            left: "-140%",
+            ease: Expo.easeInOut,
+            delay: 1.4,
+          });
+          TweenMax.staggerFrom(
+            ".images > div",
+            1,
+            {
+              y: "60",
+              opacity: 0,
+              ease: Power2.easeOut,
+              delay: 2.8,
+            },
+            0.2
+          );
+
+          TweenMax.staggerFrom(
+            ".header > p",
+            1,
+            {
+              y: "60",
+              opacity: 0,
+              ease: Power2.easeOut,
+              delay: 2.6,
+            },
+            0.2
+          );
+          TweenMax.staggerFrom(
+            " ul > li",
+            1,
+            {
+              y: "60",
+              opacity: 0,
+              ease: Power2.easeOut,
+              delay: 3.2,
+            },
+            0.5
+          );
+
+          TweenMax.from([".link", "p#more"], 1, {
+            opacity: 0,
+            ease: SteppedEase.config(1),
+            repeat: -1,
+            repeatDelay: 0.2,
+            delay: 2.8,
+          });
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>

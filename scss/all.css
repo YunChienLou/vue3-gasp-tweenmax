@@ -1,0 +1,566 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: 'Bon Voyage';
+  src: url("../font/MADEBonVoyageRegularPERSONALUSE.otf") format("opentype");
+}
+
+html, body {
+  background-color: #1a1810;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Bon Voyage";
+}
+
+.header {
+  padding: 20px;
+}
+
+.header p {
+  padding-bottom: 10px;
+}
+
+.column {
+  width: 50%;
+  height: 100vh;
+}
+
+.left {
+  position: relative;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #a77a3f;
+  background: url("/images/NightPhotography.JPG");
+  background-size: cover;
+  font-size: 48px;
+}
+
+.right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 120px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.img {
+  width: 10vw;
+  height: 200px;
+  margin: 6px;
+  background-size: cover;
+}
+
+.img-1 {
+  background: url(../images/NightPhotography2.JPG) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.img-2 {
+  background: url(../images/NightPhotography3.JPG) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.img-3 {
+  background: url(../images/NightPhotography4.JPG) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.img-4 {
+  background: url(../images/NightPhotography5.JPG) no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.header h1 {
+  font-size: 64px;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 1000;
+}
+
+.ml12 {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.link a {
+  color: red;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: "Neutral Face";
+}
+
+@media (max-width: 900px) {
+  .header h1 {
+    font-size: 32px;
+  }
+  .column {
+    width: 100%;
+  }
+  .container {
+    display: block;
+  }
+  .img {
+    width: 20vw;
+    height: 30vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .right {
+    padding: 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .images {
+    display: block;
+  }
+  .img {
+    width: 70vw;
+    height: 40vh;
+    margin: 20px 0px;
+  }
+  .left {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .header {
+    font-size: 24px;
+  }
+  .header h1 {
+    font-weight: 1000;
+  }
+}
+
+.container1 {
+  position: relative;
+}
+
+.left-col, .right-col {
+  position: absolute;
+  width: 50%;
+  height: 100vh;
+  font-family: Helvetica;
+}
+
+.left-col {
+  background: #d4a030;
+}
+
+.block-cover {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.block-cover::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #d4a030;
+  -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+          animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.next {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.next::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #ffffff;
+  -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+          animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+}
+
+.upper-block {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 50%;
+}
+
+.upper-block::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #946629;
+  -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+          animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.right-col {
+  background: #ffffff;
+  left: 50%;
+}
+
+.upper, .bottom {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+}
+
+.bottom {
+  background: url(../images/CollegeMemory.jpg) no-repeat 50% 50%;
+  top: 50%;
+  background-size: cover;
+}
+
+.upper {
+  background: #4f4538;
+}
+
+.logo {
+  color: #ffffff;
+  font-family: fantasy;
+  font-weight: normal;
+  position: absolute;
+  font-size: 30px;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.year {
+  position: absolute;
+  color: #ffffff;
+  bottom: 7%;
+  font-family: fantasy;
+  font-weight: normal;
+  font-size: 20px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.buy {
+  color: #423f3a;
+  font-family: monospace;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.cover {
+  position: absolute;
+  right: 25%;
+  bottom: 25%;
+  width: 50%;
+  height: 50%;
+  background: url(../images/CollegeMemory2.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  opacity: 0;
+  -webkit-animation: appear-text 1s linear forwards;
+          animation: appear-text 1s linear forwards;
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+
+.cover ion-icon {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  top: 50%;
+  right: 10%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: solid 1px white;
+  padding: 1em;
+}
+
+.data {
+  position: absolute;
+  top: 33%;
+  right: 36%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.about {
+  margin: 5rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #cca470;
+  line-height: 2.0rem;
+  letter-spacing: 3px;
+  font-size: 5px;
+}
+
+.about h1 {
+  margin-bottom: 1rem;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.about .media ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.about .media ul li {
+  font-size: 20px;
+  margin: 0.6rem;
+}
+
+.next ion-icon {
+  position: absolute;
+  font-size: 40px;
+  color: black;
+  top: 50%;
+  right: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: solid 3px black;
+  padding: 2rem;
+}
+
+.data2 {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+.more {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.block-bottom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+.block-bottom::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background: #4f4538;
+  -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+          animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+@-webkit-keyframes block-bottom {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+@keyframes block-bottom {
+  0% {
+    left: 0;
+    width: 0;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+  }
+}
+
+@-webkit-keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-text {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#name {
+  font-weight: normal;
+  font-family: Verdana;
+  font-size: 20px;
+}
+
+#artist {
+  font-size: 40px;
+  font-family: Verdana;
+  font-weight: bolder;
+}
+
+@media (max-width: 900px) {
+  .container1 {
+    margin-top: 150vh;
+  }
+  .left-col, .right-col {
+    width: 100%;
+    position: relative;
+  }
+  .right-col {
+    left: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .container1 {
+    margin-top: 200vh;
+  }
+  .left-col, .right-col {
+    width: 100%;
+    position: block;
+  }
+  .container1 {
+    display: block;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=all.css.map */

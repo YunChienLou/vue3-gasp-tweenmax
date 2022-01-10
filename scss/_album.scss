@@ -1,0 +1,265 @@
+$bg-color1:#d4a030;
+$bg-color2:#ffffff;
+$bg-color3:#4f4538;
+$text-color1:#423f3a;
+$font-size:10px;
+// $font-family-album :;
+
+@function fontSizeTier($tier){
+    @return $font-size*$tier
+}
+
+@mixin animation($height,$color,$delay) {
+    position: absolute;
+    top: 0%;
+    left:0%;
+    width: 100%;
+    height: $height * 100%;
+    &::after{
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background:$color;
+        animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
+        animation-delay: $delay * 1s;
+    }
+}
+
+.container1{
+    position: relative;
+}
+.left-col,.right-col{
+    position: absolute;
+    // why?
+    width: 50%;
+    height: 100vh;
+    font-family:Helvetica;
+}
+.left-col{
+    background: $bg-color1;
+}
+.block-cover{
+    @include animation(1,$bg-color1, 1)
+}
+.next{
+    @include animation(1,$bg-color2, 5)
+}
+.upper-block{
+    @include animation(0.5,#946629, 3)
+}
+.right-col{
+    background: $bg-color2;
+    left: 50%;
+    // why??
+}
+.upper,.bottom{
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+}
+.bottom{
+    background: url(../images/CollegeMemory.jpg)no-repeat 50% 50%;
+    top: 50%;
+    background-size: cover;
+}
+.upper{
+    background: $bg-color3;
+    
+}
+.logo{
+    color: #ffffff;
+    font-family:fantasy;
+    font-weight: normal;
+    position: absolute;
+    font-size: fontSizeTier(3);
+    margin-top: 1em;
+    margin-left: 1em;
+}
+.year{
+    position: absolute;
+    color: #ffffff;
+    bottom: 7%;
+    font-family:fantasy;
+    font-weight: normal;
+    font-size: fontSizeTier(2);
+    transform: rotate(-90deg);
+}
+.buy{
+    color: $text-color1;
+    font-family: monospace;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    font-size: fontSizeTier(2);
+    text-decoration: underline;
+}
+.cover{
+    position: absolute;
+    right: 25%;
+    bottom: 25%;
+    width: 50%;
+    height: 50%;
+    background: url(../images/CollegeMemory2.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    opacity: 0;
+    animation: appear-text 1s linear forwards;
+    // run appear-text 動畫持續時間1s 加速度函式為線性 播放前後模式 保持在最後一個影格狀態。
+    animation-delay:1.4s ;
+    ion-icon{
+        position: absolute;
+        font-size: fontSizeTier(4);
+        color: white;
+        top: 50%;
+        right: 10%;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        border: solid 1px white;
+        padding: 1em;
+    }
+}
+
+
+
+.data{
+    position: absolute;
+    top: 33%;
+    right: 36%;
+    color: $bg-color2;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.about{
+    margin: 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    color: #cca470;
+    line-height: 2.0rem;
+    letter-spacing: fontSizeTier(0.3);
+    font-size: fontSizeTier(0.5);
+    h1{
+        margin-bottom: 1rem;
+        font-size: fontSizeTier(3);
+        text-transform: uppercase;
+        font-weight: bolder;
+    }
+    .media{
+    ul{
+        display: flex;
+        flex-direction: row;
+        li{
+            font-size: fontSizeTier(2);
+            margin: 0.6rem;
+        }
+    }
+    }
+}
+
+.next{
+    ion-icon{
+        position: absolute;
+        font-size: fontSizeTier(4);
+        color: black;
+        top: 50%;
+        right: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 50%;
+        border: solid 3px black;
+        padding: 2rem;
+    }
+}
+.data2{
+    position: absolute;
+    left:10%;
+    top:10%;
+}
+.more{
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.block-bottom{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 50%;
+    &::after{
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 0%;
+        height: 100%;
+        background:#4f4538;
+        animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        animation-delay: 3s;
+    }
+}
+
+@keyframes block-bottom{
+    0%{
+        left: 0;
+        width: 0;
+    }
+    50%{
+        left: 0;
+        width: 100%;
+    }
+    100%{
+        left: 100%;
+        width: 0;
+    }
+}
+@keyframes appear-text{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+#name{
+    font-weight:normal;
+    font-family:Verdana;
+    font-size: fontSizeTier(2);
+}
+#artist{
+    font-size:fontSizeTier(4);
+    font-family:Verdana;
+    font-weight: bolder;
+}
+
+@media (max-width:900px) {
+    .container1{
+        margin-top: 150vh;
+    }
+    .left-col,.right-col {
+		width: 100%;
+        position: relative;
+	}
+    .right-col{
+        left: 0;
+    }
+
+}
+@media (max-width:500px) {
+    .container1{
+        margin-top: 200vh;
+    }
+    .left-col,.right-col {
+		width: 100%;
+        position: block;
+	}
+    .container1{
+        display: block;
+    }
+    
+}
