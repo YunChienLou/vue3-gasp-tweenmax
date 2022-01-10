@@ -97,7 +97,7 @@ html, body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: #a77a3f;
-  background: url("/images/NightPhotography.JPG");
+  background: url("../images/NightPhotography.JPG");
   background-size: cover;
   font-size: 48px;
 }
