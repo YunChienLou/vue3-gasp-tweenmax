@@ -42,13 +42,13 @@ $font-size:10px;
     background: $bg-color1;
 }
 .block-cover{
-    @include animation(1,$bg-color1, 1)
+    @include animation(1,$bg-color1, 5)
 }
 .next{
     @include animation(1,$bg-color2, 5)
 }
 .upper-block{
-    @include animation(0.5,#946629, 3)
+    @include animation(0.5,#946629, 5)
 }
 .right-col{
     background: $bg-color2;

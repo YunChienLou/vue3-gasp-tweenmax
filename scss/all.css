@@ -246,8 +246,8 @@ html, body {
   background: #d4a030;
   -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
           animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
-  -webkit-animation-delay: 1s;
-          animation-delay: 1s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 .next {
@@ -290,8 +290,8 @@ html, body {
   background: #946629;
   -webkit-animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
           animation: block-bottom 1.5s cubic-bezier(0.19, 1, 0.22, 1) backwards;
-  -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  -webkit-animation-delay: 5s;
+          animation-delay: 5s;
 }
 
 .right-col {

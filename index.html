@@ -137,20 +137,25 @@
           },
         },
         mounted() {
-          TweenMax.from([".left", ".left-col"], 1, {
+          TweenMax.from([".left"], 1, {
             left: "-100%",
             ease: Expo.easeInOut,
-            delay: 1.4,
+            delay: 2.4,
+          });
+          TweenMax.from([".left-col"], 1, {
+            left: "-100%",
+            ease: Expo.easeInOut,
+            delay: 3.4,
           });
           TweenMax.from([".upper"], 1, {
             left: "-200%",
             ease: Expo.easeInOut,
-            delay: 2.4,
+            delay: 4.4,
           });
           TweenMax.from([".bottom"], 1, {
             left: "-200%",
             ease: Expo.easeInOut,
-            delay: 3.4,
+            delay: 5.4,
           });
 
           TweenMax.from(".header h1", 3, {
@@ -188,7 +193,7 @@
               y: "60",
               opacity: 0,
               ease: Power2.easeOut,
-              delay: 3.2,
+              delay: 5.5,
             },
             0.5
           );
